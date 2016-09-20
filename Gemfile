@@ -21,6 +21,7 @@ gem 'turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder'
 gem 'listen', '3.1.1'
+gem 'bcrypt'
 # bundle exec rake doc:rails generates the API under doc/api.
 
 # Use ActiveModel has_secure_password
