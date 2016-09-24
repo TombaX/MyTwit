@@ -53,6 +53,7 @@ group :development, :test do
   gem 'spork-rails'
   gem 'guard-spork'
   gem 'childprocess'
+  gem 'factory_girl_rails'
 end
 
 group :test do
