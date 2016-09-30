@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+  has_many :microposts, dependent: :destroy
   before_save {self.email = email.downcase}
   before_create :create_remember_token
  
@@ -9,6 +10,11 @@ class User < ActiveRecord::Base
   
   has_secure_password
   validates :password, length: { minimum: 6 }
+
+  def feed
+    # Это предварительное решение. См. полную реализацию в "Following users".
+    Micropost.where("user_id = ?", id)
+  end
 
   def User.digest(string)
     cost = ActiveModel::SecurePassword.min_cost ? BCrypt::Engine::MIN_COST :
